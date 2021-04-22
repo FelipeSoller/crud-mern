@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const participantSchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     firstName: String,
     lastName: String,
     participation: Number,
