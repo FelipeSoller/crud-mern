@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Participant from './Participant/Participant';
 import Chart from './Chart/Chart';
@@ -6,7 +7,10 @@ import Chart from './Chart/Chart';
 import useStyles from './styles.js';
 
 const Participants = () => {
+    const participants = useSelector((state) => state.participants)
     const classes = useStyles();
+
+    console.log(participants);
 
     return (
         <>

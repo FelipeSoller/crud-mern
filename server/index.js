@@ -6,11 +6,12 @@ import participantRoutes from './routes/participants.js'
 
 const app = express();
 
-app.use('/participants', participantRoutes)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(cors());
+
+app.use('/participants', participantRoutes);
 
 const CONNECTION_URL= 'mongodb+srv://crud-mern:crudmern123@cluster0.tnmdg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
