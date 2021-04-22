@@ -1,8 +1,16 @@
-function App() {
-  return (
+import React from 'react';
+
+import Participants from './components/Participants/Participants';
+import Form from './components/Form/Form';
+
+import './styles.css';
+ 
+const App = () => {
+  return (   
     <div>
-      <h1>App</h1>
-    </div>
+      <Form />
+      <Participants />   
+    </div>  
   );
 }
 
