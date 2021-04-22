@@ -2,10 +2,10 @@
 export default (participants = [], action) => {
     switch (action.type) {
         case 'FETCH_ALL':
-            return action.playload;
+            return action.payload;
 
         case 'CREATE':
-            return participants; 
+            return [...participants, action.payload];
 
         default:
             return participants; 
