@@ -7,7 +7,7 @@ export const getParticipants = () => async (dispatch) => {
 
         dispatch({ type: 'FETCH_ALL', payload: data });
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 }
 
@@ -17,6 +17,16 @@ export const createParticipant = (participant) => async (dispatch) => {
 
         dispatch({ type: 'CREATE', payload: data });
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
+    }
+}
+
+export const deleteParticipant = (id) => async (dispatch) => {
+    try {
+        await api.deleteParticipant(id);
+
+        dispatch({ type: 'DELETE', payload: id })
+    } catch (error) {
+        console.log(error);        
     }
 }
