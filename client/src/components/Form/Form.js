@@ -17,6 +17,28 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (
+            participantData.firstName === '' || 
+            participantData.lastName === '' || 
+            participantData.participation === ''
+        ) {
+            alert('Preencha todos os campos');
+            return
+      
+          } else if (
+              participantData.firstName.length > 12 || 
+              participantData.lastName.length > 12
+            ) {
+            alert('Tamanho máximo para Nome ou Sobrenome são de 12 caracteres');
+            return
+      
+          } else if (
+              participantData.participation > 100
+            ) {
+            alert('Valor máximo de participação é 100%');
+            return      
+          }
         
         dispatch(createParticipant(participantData));
         clear();
@@ -60,7 +82,16 @@ const Form = () => {
                 onChange={(e) => setParticipantData({ ...participantData, participation: e.target.value })}
             />
                      
-            <button className={classes.button} type="submit">ENVIAR</button>
+            <button 
+                className={classes.button} 
+                type="submit"
+                // disabled={
+                //     participantData.firstName.length === 0 ||
+                //     participantData.lastName.length === 0 ||
+                //     participantData.participation == 0 ||
+                //     participantData.participation > 100 
+                //   }
+            >ENVIAR</button>
         </form>
       </div>
     );
