@@ -19,6 +19,15 @@ const Form = () => {
         e.preventDefault();
         
         dispatch(createParticipant(participantData));
+        clear();
+    }
+
+    const clear = () => {
+        setParticipantData({
+            firstName: '',
+            lastName: '',
+            participation: '',
+        })
     }
 
     const classes = useStyles();

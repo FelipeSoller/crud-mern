@@ -20,12 +20,9 @@ export default makeStyles(() => ({
         fontFamily: 'Arial',
     },
     tablesContainer: {
-        width: 1300,
-        border: 'box-sizing',
-        display: 'flex',
+        boxSizing: 'border-box',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 200,
-        paddingRight: 200,
-    }
+    }    
 }));
