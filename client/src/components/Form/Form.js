@@ -34,7 +34,7 @@ const Form = () => {
     
     return (
       <div className={classes.header}>
-        <form autocomplete="off" noValidate onSubmit={handleSubmit}>            
+        <form className={classes.inputContainer} autocomplete="off" noValidate onSubmit={handleSubmit}>            
             <input
                 className={classes.input}
                 name="firstName" 

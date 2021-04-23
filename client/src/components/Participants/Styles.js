@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     titleContainer: {
         textAlign: 'center',
         border: 'box-sizing',
@@ -24,5 +24,13 @@ export default makeStyles(() => ({
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         alignItems: 'center',
-    }    
+    },
+    [theme.breakpoints.down('sm')]: {
+        tablesContainer: {
+            boxSizing: 'border-box',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+        }
+    }   
 }));
