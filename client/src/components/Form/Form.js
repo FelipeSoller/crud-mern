@@ -23,7 +23,7 @@ const Form = () => {
             participantData.lastName === '' || 
             participantData.participation === ''
         ) {
-            alert('Preencha todos os campos');
+            alert('Todos os campos deveme estar preenchidos antes de serem enviados!');
             return
       
           } else if (
@@ -34,9 +34,10 @@ const Form = () => {
             return
       
           } else if (
-              participantData.participation > 100
+              participantData.participation > 100 ||
+              participantData.participation <= 0
             ) {
-            alert('Valor máximo de participação é 100%');
+            alert('Valor de participação deve ser entre 0 e 100');
             return      
           }
         
